@@ -1,0 +1,12 @@
+{
+  "scripts": {
+    "dev": "node dist/bot.js"
+  },
+  "devDependencies": {
+    "typescipt": "^1.0.0"
+  },
+  "dependencies": {
+    "@types/node": "^24.0.7",
+    "grammy": "^1.36.3"
+  }
+}
