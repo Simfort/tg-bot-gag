@@ -1,12 +1,13 @@
 {
   "scripts": {
-    "dev": "node dist/bot.js"
+    "dev": "node dist/bot.js & node GrowAGardenAPI/src/server.js"
   },
   "devDependencies": {
     "typescipt": "^1.0.0"
   },
   "dependencies": {
     "@types/node": "^24.0.7",
+    "dotenv": "^17.0.0",
     "grammy": "^1.36.3"
   }
 }
