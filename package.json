@@ -1,6 +1,7 @@
 {
   "scripts": {
-    "dev": "node dist/bot.js & node GrowAGardenAPI/src/server.js"
+    "dev": "node dist/bot.js",
+    "dev2": "node ./GrowAGardenAPI/src/server.js"
   },
   "devDependencies": {
     "typescipt": "^1.0.0"
