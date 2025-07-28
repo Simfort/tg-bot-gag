@@ -1,7 +1,6 @@
-import { SeedStock, Stock } from "../types/types";
+import { Stock } from "../types/types";
 
 export async function formatingStock(data: Stock) {
-  console.log(data);
   let seedsStock = "🌿Seed Stock";
   for (let i = 0; i < data.seedsStock.length; i++) {
     seedsStock += `\n <a href="${data.seedsStock[i].image}">- ${data.seedsStock[i].name}</a> x${data.seedsStock[i].value}`;
@@ -18,5 +17,17 @@ export async function formatingStock(data: Stock) {
   for (let i = 0; i < data.eggStock.length; i++) {
     seedsStock += `\n <a href="${data.eggStock[i].image}">- ${data.eggStock[i].name}</a>  x${data.eggStock[i].value}`;
   }
+  const seedTime = ((data.restockTimers.seeds * 0.001) / 60).toFixed(3);
+  const gearTime = seedTime;
+  const eggTime = ((data.restockTimers.eggs * 0.001) / 60).toFixed(3);
+  const eventShop = eggTime;
+  const cosmeticsTime = ((data.restockTimers.cosmetics * 0.001) / 60).toFixed(
+    3
+  );
+  seedsStock += `\n  Seed Time:${seedTime}`;
+  seedsStock += `\n  Gear Time:${gearTime}`;
+  seedsStock += `\n  Egg Time:${eggTime}`;
+  seedsStock += `\n  Event Time:${eventShop}`;
+  seedsStock += `\n  Cosmetics Time:${cosmeticsTime}`;
   return seedsStock;
 }
