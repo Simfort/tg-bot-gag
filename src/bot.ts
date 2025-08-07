@@ -1,17 +1,16 @@
-import { Bot } from "grammy";
+import { Telegraf } from "telegraf";
+
 import dotenv from "dotenv";
-import { startCommand, stockCommand } from "./controllers/command.controller";
+import checkForUpdates from "garden-grown-api";
 
 dotenv.config();
-const bot = new Bot(process.env.BOT_API_KEY!);
+const bot = new Telegraf(process.env.BOT_API_KEY!);
 
-bot.api.setMyCommands([
-  { command: "start", description: "Начни бота" },
-  { command: "/stock", description: "Узнай что за stock." },
-]);
+bot.command("start", (ctx) => ctx.reply("hello"));
 
-bot.command("start", startCommand);
+bot.command("stock", async (ctx) => {
+  const data = await checkForUpdates();
+  ctx.reply(JSON.stringify(data));
+});
 
-bot.command("stock", stockCommand);
-
-bot.start();
+bot.launch();

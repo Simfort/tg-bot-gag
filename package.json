@@ -1,16 +1,17 @@
 {
+  "type": "module",
   "scripts": {
-    "dev": "node dist/bot.js",
-    "server": "node ./GrowAGardenAPI/src/server.js",
-    "start": "npm run dev && npm run server"
+    "dev": "nodemon dist/bot.js",
+    "start": "node dist/bot.js"
   },
   "devDependencies": {
+    "@types/node": "^24.0.7",
     "typescipt": "^1.0.0"
   },
   "dependencies": {
-    "@types/node": "^24.0.7",
     "dotenv": "^17.0.0",
-    "grammy": "^1.36.3",
-    "vercel": "^32.0.1"
+    "garden-grown-api": "^1.0.5",
+    "nodemon": "^3.1.10",
+    "telegraf": "4.16.3"
   }
 }
